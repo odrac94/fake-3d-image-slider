@@ -1,0 +1,116 @@
+@import url("https://use.typekit.net/dpt4jsr.css");
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#slider {
+    display: flex;
+    overflow: hidden;
+    width: 900px;
+    height: 600px;
+    position: relative;
+}
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.slide.active {
+    display: block;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* GORILLA 360 */
+#gorilla360.contenedor {
+    width: 100%;
+    max-width: 1366px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    font-family: "balboa", sans-serif;
+}
+#gorilla360 .contenedor--flex {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+#gorilla360 .columna {
+    width: 100%;
+    align-self: center;
+}
+#gorilla360 .contenedor--texto {
+    color: #666;
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+#gorilla360 .contenedor--titulo {
+    margin-bottom: 40px;
+}
+#gorilla360 .contenedor--titulo h2 {
+    color: #000;
+    font-size: 3.4rem;
+    padding: 0;
+    line-height: 1;
+}
+#gorilla360 .resaltar {
+    color: #7ac402;
+}
+#gorilla360 .aviso {
+    color: #000;
+    display: block;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 20px 0;
+}
+#gorilla360 #uploadForm {
+    font-size: 24px;
+}
+
+/* Estilo para los botones de carga de archivos */
+.custom-file-upload {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #292929;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.custom-file-upload:hover {
+    background-color: #7ac402;
+}
+.file-input {
+    display: none;
+}
+
+/* BRILLO A LA PANTALLA */
+.glowing-shadow {
+    box-shadow: 20px 20px 20px rgba(241, 1, 1, 1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* MÓVIL */
+@media only screen and (max-width: 950px){
+    #gorilla360 .contenedor--flex {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

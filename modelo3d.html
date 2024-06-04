@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo 3D Feik | Gorilla Led Truck</title>
+  <link rel="stylesheet" href="/modelo3d.css">
+</head>
+<body>
+<div id="gorilla360" class="contenedor">
+    <div class="contenedor--flex">
+        <div class="columna">
+            <div class="contenedor--texto">
+                <div class="contenedor--titulo">
+                    <h2>Preview Your</h2>
+                    <h2><span class="resaltar">Campaign in 360.</span></h2>
+                </div>
+                <p>
+                    Our new widget allows you to preview your campaign on our trucks.
+                </p>
+                <p>
+                    Upload your images below and rotate the truck for a 360 view.
+                </p>
+                <span class="aviso">
+                    Maximum upload size 1MB
+                </span>
+            </div>
+            <div id="uploadForm">
+                <div class="contenedor--flex">
+                    <div class="columna">
+                        <label for="imageUpload1" class="custom-file-upload">Side screens</label>
+                        <input type="file" id="imageUpload1" accept="image/*" class="file-input">
+                    </div>
+                    <div class="columna">
+                        <label for="imageUpload2" class="custom-file-upload">Back screen</label>
+                        <input type="file" id="imageUpload2" accept="image/*" class="file-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columna">
+            <div id="slider">
+                <div class="slide active">
+                    <canvas id="canvas1" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck01.png" alt="Led Truck Image 1">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas2" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck02.png" alt="Led Truck Image 2">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas3" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck03.png" alt="Led Truck Image 3">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas4" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck04.png" alt="Led Truck Image 4">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas5" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck05.png" alt="Led Truck Image 5">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas6" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck06.png" alt="Led Truck Image 6">
+                </div>
+                <div class="slide">
+                    <canvas id="canvas7" width="900" height="600"></canvas>
+                    <img src="/img-3d-fake/led-truck08.png" alt="Led Truck Image 7">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <script src="/modelo3d.js"></script>
+</body>
+</html>
