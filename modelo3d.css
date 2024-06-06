@@ -5,31 +5,32 @@
     padding: 0;
     margin: 0;
 }
-canvas {
+#gorilla360 #slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Cambiar de 900px a 100% para adaptabilidad */
+    max-width: 900px; /* Tamaño máximo en escritorio */
+    height: auto; /* Altura automática */
+    position: relative;
+}
+
+#gorilla360 #slider .slide {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.67%; /* Relación de aspecto 3:2 */
+    display: none;
+}
+
+#gorilla360 #slider .slide.active {
+    display: block;
+}
+
+#gorilla360 #slider .slide canvas,
+#gorilla360 #slider .slide img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-#slider {
-    display: flex;
-    overflow: hidden;
-    width: 900px;
-    height: 600px;
-    position: relative;
-}
-.slide {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: none;
-}
-.slide.active {
-    display: block;
-}
-.slide img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -53,19 +54,29 @@ canvas {
     width: 100%;
     align-self: center;
 }
+#gorilla360 .columna--texto {
+    flex: 0 0 35%;
+}
+#gorilla360 .columna--slider {
+    flex: 0 0 65%;
+}
 #gorilla360 .contenedor--texto {
     color: #666;
     font-size: 1.8rem;
     line-height: 1.6;
+    font-family: SFPRODISPLAYBOLD;
 }
 #gorilla360 .contenedor--titulo {
+    font-family: FontsFree-Net-Balboa-W01-Bold !important;
     margin-bottom: 40px;
 }
 #gorilla360 .contenedor--titulo h2 {
     color: #000;
-    font-size: 3.4rem;
+    font-family: FontsFree-Net-Balboa-W01-Bold !important;
+    font-size: 4rem !important;
     padding: 0;
-    line-height: 1;
+    margin: 0 !important;
+    line-height: 1 !important;
 }
 #gorilla360 .resaltar {
     color: #7ac402;
@@ -106,11 +117,17 @@ canvas {
     box-shadow: 20px 20px 20px rgba(241, 1, 1, 1);
     transition: box-shadow 0.3s ease-in-out;
 }
-
-/* MÓVIL */
-@media only screen and (max-width: 950px){
+/* DISPOSITIVOS MÓVILES */
+@media only screen and (max-width: 950px) {
     #gorilla360 .contenedor--flex {
-        flex-direction: column;
+        flex-direction: column-reverse;
         flex-wrap: wrap;
+    }
+    #gorilla360 .columna--texto, 
+    #gorilla360 .columna--slider {
+        flex: 0 0 100%;
+    }
+    #gorilla360 #slider {
+        height: auto; /* Añade esta línea para asegurar la altura del slider */
     }
 }

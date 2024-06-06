@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let uploadedImage1 = null;
   let uploadedImage2 = null;
 
+  /**
+   * Muestra la imagen en el índice especificado
+   * @param {number} index - Índice de la imagen a mostrar
+   */
   const showImage = (index) => {
     slides[currentImageIndex].classList.remove('active');
     slides[index].classList.add('active');
@@ -61,7 +65,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Inicializa mostrando la primera imagen
   showImage(0);
 
-  // Handling image upload
+  /**
+   * Carga y dibuja las imágenes subidas en el canvas correspondiente
+   */
   const loadImage = () => {
     for (let i = 1; i <= slideCount; i++) {
       let canvas = document.getElementById(`canvas${i}`);
@@ -167,6 +173,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   };
 
+  /**
+   * Dibuja la imagen transformada en el canvas
+   * @param {CanvasRenderingContext2D} ctx - Contexto del canvas
+   * @param {HTMLImageElement} image - Imagen a transformar
+   * @param {Array} srcPoints - Puntos de origen
+   * @param {Array} dstPoints - Puntos de destino
+   */
   const drawTransformedImage = (ctx, image, srcPoints, dstPoints) => {
     const width = image.width;
     const height = image.height;
@@ -208,28 +221,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   document.getElementById('imageUpload1').addEventListener('change', (event) => {
     let file = event.target.files[0];
-    if (file) {
+    if (file && file.size <= 1048576) { // 1MB en bytes
       let reader = new FileReader();
       reader.onload = (e) => {
         uploadedImage1 = e.target.result;
         loadImage();
       };
       reader.readAsDataURL(file);
+    } else {
+      alert("El archivo supera el tamaño máximo permitido de 1MB.");
     }
   });
 
   document.getElementById('imageUpload2').addEventListener('change', (event) => {
     let file = event.target.files[0];
-    if (file) {
+    if (file && file.size <= 1048576) { // 1MB en bytes
       let reader = new FileReader();
       reader.onload = (e) => {
         uploadedImage2 = e.target.result;
         loadImage();
       };
       reader.readAsDataURL(file);
+    } else {
+      alert("El archivo supera el tamaño máximo permitido de 1MB.");
     }
   });
 
+  /**
+   * Calcula la matriz de transformación
+   * @param {Array} src - Puntos de origen
+   * @param {Array} dst - Puntos de destino
+   * @returns {Array} Matriz de transformación
+   */
   function getTransformMatrix(src, dst) {
     const A = [];
     for (let i = 0; i < 4; i++) {
@@ -253,6 +276,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ];
   }
 
+  /**
+   * Aplica la transformación a las coordenadas
+   * @param {number} x - Coordenada x
+   * @param {number} y - Coordenada y
+   * @param {Array} matrix - Matriz de transformación
+   * @returns {Array} Coordenadas transformadas
+   */
   function applyTransform(x, y, matrix) {
     const a = matrix[0][0] * x + matrix[0][1] * y + matrix[0][2];
     const b = matrix[1][0] * x + matrix[1][1] * y + matrix[1][2];
