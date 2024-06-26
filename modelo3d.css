@@ -8,7 +8,7 @@
 #gorilla360 #slider {
     display: flex;
     overflow: hidden;
-    width: 100%; /* Cambiar de 900px a 100% para adaptabilidad */
+    width: 100%;
     max-width: 900px; /* Tamaño máximo en escritorio */
     height: auto; /* Altura automática */
     position: relative;
@@ -147,6 +147,6 @@
         flex: 0 0 100%;
     }
     #gorilla360 #slider {
-        height: auto; /* Añade esta línea para asegurar la altura del slider */
+        height: auto; /* Asegurar la altura del slider */
     }
 }
