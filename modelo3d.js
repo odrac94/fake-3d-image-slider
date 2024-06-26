@@ -235,7 +235,7 @@ const validateFile = (file) => {
     alert("Tipo de archivo no permitido. Solo se permiten imágenes.");
     return false;
   }
-  if (file.size > 1048576) { // 1MB en bytes
+  if (file.size > 6000000) { // 1MB en bytes
     alert("El archivo supera el tamaño máximo permitido de 1MB.");
     return false;
   }

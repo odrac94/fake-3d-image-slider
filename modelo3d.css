@@ -1,8 +1,5 @@
 @import url("https://use.typekit.net/dpt4jsr.css");
 
-::root {
-    --fuente-principal: "montserrat", sans-serif;
-}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,8 +12,8 @@
     max-width: 900px; /* Tamaño máximo en escritorio */
     height: auto; /* Altura automática */
     position: relative;
+    margin: 0 auto;
 }
-
 #gorilla360 #slider .slide {
     position: relative;
     width: 100%;
@@ -24,11 +21,9 @@
     padding-bottom: 66.67%; /* Relación de aspecto 3:2 */
     display: none;
 }
-
 #gorilla360 #slider .slide.active {
     display: block;
 }
-
 #gorilla360 #slider .slide canvas,
 #gorilla360 #slider .slide img {
     position: absolute;
@@ -64,36 +59,57 @@
     flex: 0 0 65%;
 }
 #gorilla360 .texto {
-    color: #666;
+    color: #000;
     font-size: 1.8rem;
+    text-align: center;
     line-height: 1.6;
     font-family: SFPRODISPLAYBOLD;
 }
+#gorilla360 .texto p:nth-of-type(2) {
+    color: #636363;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 #gorilla360 .texto-titulo {
     font-family: FontsFree-Net-Balboa-W01-Bold !important;
     margin-bottom: 40px;
 }
-#gorilla360 .texto-titulo h2 {
+#gorilla360 .columna--slider .texto-titulo h2 {
     color: #000;
     font-family: FontsFree-Net-Balboa-W01-Bold !important;
-    font-size: 4rem !important;
+    font-size: 3rem !important;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1 !important;
+    text-transform: uppercase;
     padding: 0;
     margin: 0 !important;
-    line-height: 1 !important;
 }
 #gorilla360 .resaltar {
     color: #7ac402;
 }
 #gorilla360 .aviso {
     color: #000;
+    font-size: bolder;
     display: block;
-    background-color: #e0e0e0;
-    border-radius: 4px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #f5f5f7;
+    border: 1px solid #c8d6e3;
+    border-radius: 99px;
+    margin: 40px auto;
     padding: 10px;
-    margin: 20px 0;
 }
 #gorilla360 #uploadForm {
+    width: 100%;
+    max-width: 500px;
     font-size: 24px;
+    margin: 0 auto;
+}
+#uploadForm .contenedor-flex {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 /* Estilo para los botones de carga de archivos */
@@ -105,7 +121,7 @@
     padding: 10px 20px;
     cursor: pointer;
     background-color: #292929;
-    border-radius: 4px;
+    border-radius: 99px;
     transition: background-color 0.3s ease;
 }
 .custom-file-upload:hover {
