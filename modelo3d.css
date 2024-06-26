@@ -1,5 +1,8 @@
 @import url("https://use.typekit.net/dpt4jsr.css");
 
+::root {
+    --fuente-principal: "montserrat", sans-serif;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -44,10 +47,10 @@
     margin: 0 auto;
     font-family: "balboa", sans-serif;
 }
-#gorilla360 .contenedor--flex {
+#gorilla360 .contenedor-flex {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     gap: 40px;
 }
 #gorilla360 .columna {
@@ -60,17 +63,17 @@
 #gorilla360 .columna--slider {
     flex: 0 0 65%;
 }
-#gorilla360 .contenedor--texto {
+#gorilla360 .texto {
     color: #666;
     font-size: 1.8rem;
     line-height: 1.6;
     font-family: SFPRODISPLAYBOLD;
 }
-#gorilla360 .contenedor--titulo {
+#gorilla360 .texto-titulo {
     font-family: FontsFree-Net-Balboa-W01-Bold !important;
     margin-bottom: 40px;
 }
-#gorilla360 .contenedor--titulo h2 {
+#gorilla360 .texto-titulo h2 {
     color: #000;
     font-family: FontsFree-Net-Balboa-W01-Bold !important;
     font-size: 4rem !important;
@@ -119,7 +122,7 @@
 }
 /* DISPOSITIVOS MÓVILES */
 @media only screen and (max-width: 950px) {
-    #gorilla360 .contenedor--flex {
+    #gorilla360 .contenedor-flex {
         flex-direction: column-reverse;
         flex-wrap: wrap;
     }

@@ -217,8 +217,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
     tempCtx.putImageData(transformedOverlay, 0, 0);
 
     ctx.drawImage(tempCanvas, 0, 0, ctx.canvas.width, ctx.canvas.height);
+    
+    // Desconectar el canvas temporal del DOM
+    tempCanvas.remove();
   };
 
+//
+// VALIDAR TIPO DE ARCHIVOS
+//
+
+// Tipos de imagen permitidos
+const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
+// Función para validar el archivo
+const validateFile = (file) => {
+  if (!validImageTypes.includes(file.type)) {
+    alert("Tipo de archivo no permitido. Solo se permiten imágenes.");
+    return false;
+  }
+  if (file.size > 1048576) { // 1MB en bytes
+    alert("El archivo supera el tamaño máximo permitido de 1MB.");
+    return false;
+  }
+  return true;
+};
+
+// SUBIDA DE PANTALLA LATERAL
   document.getElementById('imageUpload1').addEventListener('change', (event) => {
     let file = event.target.files[0];
     if (file && file.size <= 1048576) { // 1MB en bytes
@@ -233,6 +257,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 
+// SUBIDA DE PANTALLA
   document.getElementById('imageUpload2').addEventListener('change', (event) => {
     let file = event.target.files[0];
     if (file && file.size <= 1048576) { // 1MB en bytes
